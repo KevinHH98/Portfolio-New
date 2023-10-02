@@ -181,6 +181,11 @@ Navbar
   }
 }
 
+@media screen and (max-width: 476px) {
+  .navbar {
+  }
+}
+
 /* 
 ===============
 Hero
@@ -223,7 +228,7 @@ Hero
   animation-duration: 2s;
 }
 
-@media screen and (min-width: 676px) {
+@media screen and (min-width: 370px) {
   .hero-container {
     display: flex;
     justify-content: space-around;
@@ -333,7 +338,9 @@ Hero
 */
 
 .about {
-  height: 30rem;
+  height: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 .about-left {
   height: 20rem;
@@ -386,7 +393,7 @@ Hero
   }
   .about-text {
     max-width: 32rem;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-right: 2rem;
   }
   .about h1 {
@@ -397,6 +404,12 @@ Hero
   .about-text {
     letter-spacing: 1px;
     color: var(--p-grey);
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .about-text {
+    width: 18rem;
   }
 }
 
@@ -514,12 +527,22 @@ Meine Hobbys
   }
 }
 
+@media screen and (max-width: 476px) {
+  .hobby {
+    height: 50rem;
+  }
+}
+
 /* 
 ===============
 Projekte
 ===============
 */
-
+@media screen and (max-width: 476px) {
+  .project-container {
+    scale: 0.75;
+  }
+}
 .project-container {
   position: relative;
   /* border: 1px solid red; */
@@ -641,6 +664,12 @@ Projekte
   /* border: 2px solid var(--darkgreen-clr); */
   transition: all 0.3s linear;
 }
+@media screen and (max-width: 476px) {
+  .all {
+    scale: 0.8;
+    margin-top: -1rem;
+  }
+}
 .all a {
   color: rgb(55, 55, 55);
   text-transform: uppercase;
@@ -709,7 +738,7 @@ Mein Werdegang
 
 .werdegang-underline {
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .werdegang-title {
@@ -784,6 +813,35 @@ Mein Werdegang
   }
 }
 
+@media screen and (max-width: 476px) {
+  .single-werdegang h3 {
+    margin-left: 1.5rem;
+  }
+  .single-werdegang p {
+    margin-left: 1.5rem;
+  }
+  .single-werdegang.right {
+    border-style: none;
+  }
+
+  .single-werdegang.left {
+    border-style: none;
+  }
+  .single-werdegang h3 {
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    margin-left: 14rem;
+    margin-right: 2rem;
+    margin: 0 auto;
+  }
+  .single-werdegang p {
+    margin: 1rem auto;
+  }
+  .single-werdegang h2 {
+    padding-top: 0;
+  }
+}
+
 /* 
 ===============
 Meine Kenntnisse
@@ -791,8 +849,9 @@ Meine Kenntnisse
 */
 .kenntnisse-container {
   display: flex;
-  justify-content: space-around;
-  width: 40rem;
+  justify-content: center;
+  width: auto;
+  max-width: 1170px;
   margin: 0 auto;
 }
 .kenntnisse-underline {
@@ -800,6 +859,7 @@ Meine Kenntnisse
 }
 .kenntnisse-liste {
   padding: 2rem;
+  margin-left: 3rem;
 }
 .kenntnisse-items {
   font-weight: 700;
@@ -824,6 +884,18 @@ Meine Kenntnisse
 
 .lebenslauf-btn:hover {
   background-color: #e7c6a9;
+}
+
+@media screen and (max-width: 476px) {
+  .kenntnisse-liste {
+    margin-left: 1rem;
+  }
+  .kenntnisse-items {
+    font-size: 0.8rem;
+  }
+  .lebenslauf-btn {
+    scale: 0.8;
+  }
 }
 /* 
 ===============
@@ -876,6 +948,22 @@ Kontaktier mich
     padding-top: 1rem;
   }
 }
+@media screen and (max-width: 476px) {
+  .kontakt-heading h1 {
+    font-size: 1rem;
+  }
+
+  .kontakt-heading p {
+    font-size: 0.75rem;
+  }
+
+  .e-mail-container h1 {
+    font-size: 1rem;
+  }
+  .kontakt {
+    height: 6.5rem;
+  }
+}
 
 /* 
 ===============
@@ -901,6 +989,15 @@ Footer
   letter-spacing: 2px;
 }
 
+@media screen and (max-width: 476px) {
+  .footer-container h3 {
+    font-size: 0.6rem;
+  }
+  .footer {
+    height: 4rem;
+  }
+}
+
 /* 
 ===============
 Meine Projekte (page)
@@ -909,7 +1006,6 @@ Meine Projekte (page)
 .projekte-navbar {
   position: fixed;
 }
-
 
 .projekte-title {
   padding-top: 6rem;
@@ -992,7 +1088,7 @@ Meine Projekte (page)
   }
 }
 
-.github-btn{
+.github-btn {
   display: block;
   text-align: center;
   max-width: 15rem;
