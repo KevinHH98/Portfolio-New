@@ -1,0 +1,62 @@
+.projekte-navbar {
+  position: static;
+}
+.projekte-section {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+}
+
+.projekte-card h3 {
+  display: inline-block;
+  background-color: var(--primary-clr);
+  /* transform: translateX(9rem); */
+  transform: translateY(-2.7rem);
+  padding: 0.5rem 0.7rem;
+  color: var(--darkgreen-clr);
+}
+.projekte-card img {
+  width: 100%;
+}
+.card-underline {
+  margin: 0 auto;
+  margin-top: 0.75rem;
+}
+.card-title {
+  font-family: var(--fontFamily);
+  font-size: 1.5rem;
+  color: var(--darkGrey);
+  /* padding: 1rem; */
+  /* margin-top: 1rem; */
+  letter-spacing: 3px;
+}
+
+.projekte-card img {
+  margin-bottom: 1.5rem;
+}
+
+.card-info p {
+  color: var(--p-grey);
+  max-width: 19rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-family: var(--secondFont);
+}
+.projekte-card {
+  background: rgb(247, 247, 247);
+  width: 23rem;
+  text-align: center;
+  margin: 0 auto;
+  
+  height: 588px;
+  border-radius: 0.3rem;
+  
+  margin-bottom: 4rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+  
+}

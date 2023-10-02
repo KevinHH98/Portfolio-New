@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- styles -->
+    <link rel="stylesheet" href="main.css" />
+    <title>Einkaufsliste</title>
+  </head>
+  <body>
+   
+    <section class="section-center">
+      <form class="einkaufsliste">
+        <p class="alert ">delete item</p>
+        <h1>einkaufsliste</h1>
+        <div class="form-control">
+          <input class="input" type="text" id="textfeld" placeholder="z.b Eier" />
+          <button class="submit-btn" type="submit">hinzufügen</button>
+        </div>
+      </form>
+      <!-- liste -->
+      <div class="einkauf-container">
+        <div class="einkauf-liste">
+          <article class="einkauf-item">
+            <!-- <p class="einkauf-title">item</p>
+            <div class="btn-container">
+              <button class="delete-btn" type="button">
+                <i class="fas fa-trash"></i>
+              </button> -->
+            </article>
+          </div>
+        </div>
+        <!-- clear button -->
+        <button type="button" class="clear-btn">alles löschen</button>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

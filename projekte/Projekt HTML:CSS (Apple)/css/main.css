@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dai+Banna+SIL:wght@300&family=Noto+Serif+Vithkuqi&family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+
+  /* darkest grey - used for headings */
+  --clr-grey-1: #102a42;
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-black: #222;
+
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+img {
+  width: 100%;
+  display: block;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+.navbar {
+  height: 5rem;
+  background-color: transparent;
+}
+.nav-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+.logo i {
+  font-size: 7rem;
+  color: black;
+}
+.links-container {
+  width: 60%;
+  margin-left: 2rem;
+}
+.links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  margin-right: 3rem;
+}
+
+.links a {
+  color: black;
+  letter-spacing: var(--spacing);
+  font-weight: 200;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.2s linear;
+}
+
+.links a:hover{
+  color: #6adae6;
+}
+
+/*
+=============== 
+Banner
+===============
+*/
+
+.banner {
+   clip-path: polygon(100% 0, 100% 95%, 38% 100%, 0 100%, 0 0);
+  height: 100vh;
+  background: url("../bilder/section-1-bg-5.jpg") no-repeat center/cover;
+}
+
+.banner-section {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  padding-top: 10rem;
+  justify-content: space-around;
+}
+.phone img {
+  height: 30rem;
+  width: auto;
+}
+.best-gift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+  padding-top: 5rem;
+}
+.best-gift h1 {
+  letter-spacing: var(--spacing);
+  font-family: "Work Sans", sans-serif;
+}
+.best-gift p {
+  letter-spacing: var(--spacing);
+}
+.best-gift span {
+  letter-spacing: var(--spacing);
+  padding-bottom: 7rem;
+}
+.best-gift button {
+  padding: 0.75rem 2.5rem;
+  background-color: transparent;
+  border: 2px solid black;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.best-gift button:hover {
+  color: white;
+  background-color: black;
+  clip-path: polygon(
+    40% 15%,
+    77% 15%,
+    100% 10%,
+    100% 90%,
+    75% 85%,
+    40% 85%,
+    30% 100%,
+    0 50%,
+    0 50%,
+    30% 0
+  );
+}
+
+/*
+=============== 
+IPhone
+===============
+*/
+
+.phone-2 {
+  background-color: transparent;
+  /* position: relative; */
+  height: 120vh;
+  width: 100%;
+  padding: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: -2;
+  overflow: hidden;
+}
+.phone-title h1 {
+  padding-top: 3rem;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 200;
+  font-family: "Work Sans", sans-serif;
+  z-index: 3;
+}
+.phone-title{
+  position: relative;
+}
+.phone-title::before{
+content: '';
+width: 100%;
+height: 30rem;
+background: linear-gradient(rgba(106, 222, 166,0.8), white);
+position: absolute;
+top: 0;
+left: 7rem;
+transform: skewX(-50deg);
+transform-origin:left top ;
+z-index: -1;
+}
+.phone-img {
+  margin-top: 5rem;
+  height: 30rem;
+  width: 40vw;
+  background: linear-gradient(rgba(106, 222, 166,1), white);
+  border-radius: 0.3rem;
+}
+.phone-img img{ 
+  height: inherit;
+  object-fit: contain;
+}
+
+.phone-button {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(to right, rgb(51, 51, 51) 60%, rgb(82, 82, 82));
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.phone-button::after{
+  content: '';
+  width: 50%;
+  height: 50%;
+  border: 0.1rem solid #6adea6;
+  display: block;
+  border-radius: 0.3rem;
+}
+.phone-button span{
+  position: absolute;
+  top: -2rem;
+  font-weight:400;
+  text-transform: uppercase; 
+  letter-spacing: var(--spacing);
+  color: #55b486;
+  width: max-content;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.phone-button:hover span{
+  transform: scale(1);
+ }
+
+
+/*
+=============== 
+Airpods
+===============
+*/
+
+.airpods{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.airpods-center{
+  width: 90%;
+  height: 80%;
+  display: flex;
+  position: relative;
+}
+.airpods-title{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7rem;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0 #999;
+}
+.airpods-btns{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 3rem;
+}
+.airpods img{
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+.airpods-img-2{
+  background-color: #6edae6;
+}
+.airpod-btn{
+  height: 2rem;
+  width: 8rem;
+  margin: 0 1rem;
+  background-color: #6adae6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.airpod-btn:last-child{
+  background-color: white;
+  color: #6adae6;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+.footer{
+  margin-top: 3rem;
+  background-color: #6adae6;
+  height: 8rem;
+}
+
+.footer-img{
+  display: flex;
+  margin: 0 auto;
+  width: 70vw;
+  height: 100%;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+.footer-center img{
+  object-fit: contain;
+  width: 4rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+.footer-center img:hover{
+  transform: scale(1.08);
+}
+
+.rights{
+  display: block;
+  text-align: center;
+  padding-top: 1rem;
+  letter-spacing: var(--spacing);
+  color: black;
+}
+
+
+/* media queries */
+
+@media screen  and (max-width:800px){
+  html{
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width:663px){
+   .navbar .links li a{
+font-size: 75%;
+font-weight: 600;
+  }
+    .phone-img{
+    transform: translateX(20px);
+    margin-bottom: -4rem;
+    height: 22rem;
+  }
+   .airpods-img-1{
+    display: none;
+  }
+  .airpods img{
+    width: 100%;
+  }
+  .airpods-btns{
+    display: flex;
+  }
+  .airpod-btn{
+    background-color: white;
+    color: #6adae6;
+    box-shadow: 0.1rem 0.1rem 0.1rem #ddd;
+  }
+.footer-img{
+height: 4rem;
+}
+}
+@media screen and (max-width:500px) {
+  .logo{
+    transform: scale(0.60);
+  }
+  html{
+    font-size:70% ;
+  }
+  .navbar .links li a{
+font-size: 50%;
+  }
+  .phone{
+    position: absolute;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .best-gift p{
+    color: black;
+  }
+  .best-gift h1::first-letter{
+    visibility: hidden;
+    opacity: 0;
+  }
+  .best-gift button{
+    background-color: black;
+    color: white;
+  }
+  .best-gift button:hover{
+    background-color: transparent;
+    color: black;
+    clip-path: none;
+  }
+  .phone-img{
+    transform: translateX(20px);
+    margin-bottom: -7rem;
+    height: 18rem;
+  }
+
+}

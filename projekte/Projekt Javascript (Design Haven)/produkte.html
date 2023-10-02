@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <!-- icons link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Produkte</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <navbar class="navbar nav-produkte">
+      <section class="nav-center">
+      <ul class="nav-links">
+        <li>
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a href="./produkte.html">Produkte</a>
+        </li>
+        <li>
+          <a href="./about.html">About</a>
+        </li>
+      </ul>
+        <i class="fas fa-bars bars"></i>
+        <h1 class="nav-heading">DesignHaven</h1>
+        <i class="fas fa-shopping-cart card"></i>
+      </section>
+    </navbar>
+    <!-- end of navbar -->
+    <article class="main-toggle">
+    <i class="fas fa-times close-btn"></i>
+    <!-- <div class="toggle"> -->
+        <ul class="list">
+      <li><a href="./index.html">- home</a></li>
+      <li><a href="./index.html">- produkte</a></li>
+      <li><a href="./index.html">- about</a></li>
+    </ul>
+  <!-- </div> -->
+</article>
+<!-- end of toggle -->
+    <!-- produkte -->
+    <section class="main-section">
+      <!-- filter btns -->
+      <div class="btn-container">
+        
+        <!-- <button class="btn" data-id="all">ALL</button>
+        <button class="btn" data-id="roche">ROCHE</button>
+        <button class="btn" data-id="bb">B&B</button>
+        <button class="btn" data-id="hm">HM</button> -->
+      </div>
+      <article class="main-article">
+        <!-- Preis liste -->
+        <div class="preis-container">
+          <form class="suche-form" action="">
+          <input class="suchen" type="text" placeholder="suche...">
+        </form>
+          <button class="btn-preis" data-id="100">bis 100€</button>
+          <button class="btn-preis" data-id="300">bis 300€</button>
+          <button class="btn-preis" data-id="600">bis 600€</button>
+          <button class="btn-preis" data-id="600+">600+</button>
+        </div>
+        <!-- produkte -->
+        <!-- single produkt -->
+        <div class="product-container">
+          <!-- <div class="not-found">
+            <p class="not-found-text">nichts gefunden...</p>
+          </div> -->
+          <div class="single-produkt produkt">
+              <!-- <img src="./Bilder/Eclaté Elegance Couch.jpg" alt="img" />
+              <h4 class="produkt-header">Eclate Elegance Couch</h4>
+              <h4 class="produkt-price">799€</h4> -->
+            </div>
+        </div>
+        <!-- end of  single produkt -->
+      </article>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

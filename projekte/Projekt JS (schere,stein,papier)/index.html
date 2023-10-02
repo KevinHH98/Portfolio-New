@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <navbar class="navbar">
+      <h1 class="title">Schere / stein / papier</h1>
+    </navbar>
+    <section class="section-center">
+      <div class="counter">
+        <p class="user">user</p>
+        <h1 class="count">
+          <span class="user-count">0</span> : <span class="comp-count">0</span>
+        </h1>
+        <p class="comp">comp</p>
+      </div>
+      <div class="winner-container">
+        <h2 class="winner-text">Schere schlägt papier/ / </h2>
+
+        <span class="winner-span"> gewonnen!</span>
+      </div>
+      <div class="buttons">
+        <i class="fa-solid fa-hand-scissors" data-id="schere"></i>
+        <i class="fa-solid fa-hand" data-id="papier"></i>
+        <i class="fa-solid fa-hand-back-fist" data-id="stein"></i>
+      </div>
+      <h3 class="title-under">wähle deinen Zug!</h3>
+      <button class="reset-btn">reset</button>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

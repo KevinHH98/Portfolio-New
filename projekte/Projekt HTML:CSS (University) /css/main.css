@@ -1,0 +1,565 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(211, 91%, 17%);
+  --clr-primary-2: hsl(211, 84%, 25%);
+  --clr-primary-3: hsl(211, 81%, 29%);
+  --clr-primary-4: hsl(211, 77%, 34%);
+  /* primary/main color */
+  --clr-primary-5: hsl(211, 94%, 40%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(211, 57%, 50%);
+  --clr-primary-7: hsl(211, 65%, 59%);
+  --clr-primary-8: hsl(211, 80%, 74%);
+  --clr-primary-9: hsl(211, 94%, 87%);
+  --clr-primary-10: hsl(211, 100%, 94%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: #102a42;
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+.img {
+  width: 100%;
+  display: block;
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+.bars {
+  display: none;
+}
+.navbar {
+  padding-top: 0.5rem;
+  height: 5rem;
+  /* border: 1px solid red; */
+
+}
+.navbar-center {
+  width: 90vw;
+  /* max-width: 1170px;
+  margin: 0 auto; */
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-list {
+  height: 100%;
+  width: 50vw;
+  margin: auto 0;
+}
+.list {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.single-list {
+  margin-right: 1rem;
+  letter-spacing: var(--spacing);
+}
+.single-list a {
+  color: var(--clr-primary-5);
+  font-weight: 550;
+  transition: var(--transition);
+  font-family: "Dai Banna SIL", serif;
+}
+.single-list a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: var(--clr-primary-5);
+  transition: var(--transition);
+  margin: auto;
+}
+.single-list a:hover::after {
+  width: 100%;
+}
+.single-list a:hover {
+  color: var(--clr-primary-8);
+}
+.logo img {
+  height: 5rem;
+}
+.bars {
+  font-size: 2rem;
+  margin: auto 0;
+  color: var(--clr-primary-5);
+}
+@media screen and (max-width: 770px) {
+  .nav-list {
+    display: none;
+  }
+  .bars {
+    display: block;
+  }
+}
+
+/*
+=============== 
+Hero
+===============
+*/
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("../bilder/hero-img.jpg") center/cover no-repeat;
+}
+
+.hero-center {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.hero-title {
+  color: white;
+  letter-spacing: 3px;
+  font-family: "Noto Serif Vithkuqi", serif;
+  text-shadow: 2px 5px 5px black;
+}
+
+.hero-content h3 {
+  color: var(--clr-primary-9);
+  letter-spacing: var(--spacing);
+  font-family: "Dai Banna SIL", serif;
+}
+
+.hero-link {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--clr-primary-7);
+  padding: 0.75rem 2.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 4px black;
+}
+.hero-link a {
+  color: var(--clr-primary-7);
+}
+
+.hero-link span {
+  background-color: var(--clr-primary-8);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+  transition: 0.5s;
+  border-radius: 2rem;
+}
+.hero-link:hover span {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  border: 1px solid var(--clr-primary-2);
+}
+.hero-link a:hover {
+  color: var(--clr-primary-2);
+}
+
+/*
+=============== 
+About
+===============
+*/
+
+.about {
+  background-color: var(--clr-black);
+  /* height: 100vh; */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-title {
+  color: white;
+  text-align: center;
+}
+.about-title h3 {
+  font-size: 3rem;
+  margin-top: 4rem;
+  letter-spacing: 3px;
+  font-family: "Noto Serif Vithkuqi", serif;
+  color: var(--clr-primary-7);
+}
+.about-title span {
+  color: white;
+}
+
+
+.card {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 5rem;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.card-container {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 15rem;
+  position: relative;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    var(--clr-primary-5),
+    rgba(6, 99, 198, 0.3)
+  );
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+
+.card-container:hover .overlay {
+  opacity: 1;
+}
+.card-desc {
+  width: 80%;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0%;
+  opacity: 0;
+  transition: all 0.4s linear;
+  color: white;
+}
+
+.card-desc h3 {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-family: "Noto Serif Vithkuqi", serif;
+}
+
+.card-desc p {
+  color: white;
+  letter-spacing: var(--spacing);
+  font-size: 14px;
+}
+.card-desc hr {
+  color: white;
+  height: 2px;
+  margin: 15px auto;
+  width: 60%;
+}
+
+.card-container:hover .card-desc {
+  opacity: 1;
+  bottom: 40%;
+}
+@media screen and (max-width:550px){
+ .card-container:hover .card-desc {
+  opacity: 1;
+  bottom: 5%;
+}
+.card-desc{
+  transform: scale(0.8);
+  left: 10px;
+  
+}
+.card-desc p{
+  margin: 0;
+}
+}
+
+@media screen and (min-width: 800px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*
+=============== 
+Form
+===============
+*/
+
+.form-section {
+  background: linear-gradient(
+    to bottom,
+    var(--clr-primary-3),
+    rgba(1, 21, 42, 1)
+  );
+  height: 60rem;
+  margin-top: -4rem;
+}
+@media  screen and (min-width:550px) {
+  .form-container{
+    width: 30rem;
+    height: 30rem;
+  }
+}
+.form-container {
+  /* width: 30rem;
+  height: 30rem; */
+  background-color: transparent;
+  margin: 0 auto;
+  box-shadow: 0 1rem 3rem #000;
+  padding: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  border: 3px solid black;
+  border-top-color: var(--clr-primary-8);
+  border-bottom-color: var(--clr-primary-8);
+  position: relative;
+}
+.form-container::after {
+  content: "";
+  width: 3px;
+  height: 100px;
+  position: absolute;
+  background-color: var(--clr-primary-8);
+  top: 0;
+  right: 0;
+}
+.form-container::before {
+  content: "";
+  width: 3px;
+  height: 100px;
+  position: absolute;
+  background-color: var(--clr-primary-8);
+  bottom: 0;
+  left: 0;
+}
+.form-title {
+  padding-top: 4rem;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  position: relative;
+}
+.input-group input,
+.input-group textarea {
+  padding: 2rem 1rem 1rem 1rem;
+  background-color: transparent;
+  border: 2px solid var(--clr-primary-7);
+  font-size: 1rem;
+  color: var(--clr-primary-10);
+  letter-spacing: 1px;
+  border-radius: 10px;
+}
+.input-group input:hover,
+.input-group textarea:hover {
+  border: 0.1rem solid #ccc;
+}
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-primary-7);
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+}
+.input-groups {
+  display: flex;
+  justify-content: space-between;
+}
+.input-groups .input-group {
+  width: 48.5%;
+}
+.form-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 0.3rem;
+  border: 2px solid var(--clr-primary-7);
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.form-btn:hover {
+  background-color: var(--clr-primary-7);
+}
+
+@media screen and (max-width:550px){
+.form-container{
+  transform: scale(0.8);
+}
+
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+.footer{
+  height: 7rem;
+  background-color:black;
+  color: var(--clr-primary-10);
+  text-align: center;
+}
+.footer-section{
+ display: grid;
+ align-items: center;
+ height: 100%;
+}
+.copy{
+  display: grid;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+}
+.copy p{
+  color: var(--clr-primary-10);
+}
+.social-icons{
+  font-size: 1.5rem;
+
+}
+.social-icons i{
+  padding: 1rem;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.social-icons i:hover{
+  color: var(--clr-primary-7);
+}
