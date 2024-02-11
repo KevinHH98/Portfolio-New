@@ -11,24 +11,27 @@
 
 :root {
   font-size: 16px;
-  --darkgreen-clr: rgb(121, 100, 75);
-  --primary-clr: #cdaf95;
-  --lightgreen-clr: #f2e9da;
-  --darkGrey: rgb(57, 57, 57);
+  --darkgreen-clr-transp: #35bced80;
+  --darkgreen-clr: rgb(174, 217, 254);
+  --primary-clr: #35bced;
+  --lightgreen-clr: #000204;
+  --darkGrey: rgb(255, 255, 255);
   --p-grey: rgb(94, 94, 94);
   --lightGrey: rgb(248, 246, 246);
+  --red: #b30048;
   --letterSpacing: 2px;
   --transition: all 0.5s linear;
   --fontFamily: "Lobster", cursive;
   --secondFont: "Lunasima", sans-serif;
+  --title-font: "Outfit", sans-serif;
 }
 .btn {
-  background-color: var(--darkgreen-clr);
-  color: white;
+  background-color: var(--red);
+  color: rgb(11, 11, 11);
   padding: 0.725rem 1.75rem;
   font-size: 1rem;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.5);
   border-color: transparent;
   transition: var(--transition);
   margin-top: 1.25rem;
@@ -104,7 +107,7 @@ Navbar
   text-decoration: none;
 
   letter-spacing: var(--letterSpacing);
-  color: var(--darkgreen-clr);
+  color: var(--primary-clr);
   font-family: var(--secondFont);
 }
 .navbar ul li {
@@ -112,10 +115,10 @@ Navbar
 }
 .navbar ul li:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 1px 0px var(--darkgreen-clr);
+  box-shadow: 0px 1px 0px var(--red);
 }
 .navbar ul li a:hover {
-  color: #937e6c;
+  color: var(--red);
 }
 
 .nav-container i {
@@ -169,20 +172,16 @@ Navbar
   .toggle li {
     transition: all 0.5s linear;
     text-decoration: none;
-    color: var(--darkgreen-clr);
+    color: var(--primary-clr);
     padding: 1.5rem;
     list-style-type: none;
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 2px;
+    box-shadow: 1px 2px 5px var(--red);
   }
   .toggle {
     display: block;
-  }
-}
-
-@media screen and (max-width: 476px) {
-  .navbar {
   }
 }
 
@@ -212,12 +211,14 @@ Hero
 }
 
 .hero-btn {
+  background-color: var(--primary-clr);
   display: inline-block;
   text-decoration: none;
   padding: 0.725rem 1.75rem;
 }
 .hero-btn:hover {
-  background-color: var(--primary-clr);
+  background-color: var(--red);
+  color: white;
 }
 .hero-left {
   animation-name: heroLeft;
@@ -261,7 +262,7 @@ Hero
 
   .hero-right::before {
     content: "";
-    border: 5px solid var(--darkgreen-clr);
+    border: 5px solid var(--primary-clr);
     border-radius: 0.75rem;
     position: absolute;
     width: 100%;
@@ -271,13 +272,36 @@ Hero
     z-index: -1;
   }
 }
+@media screen and (max-width: 500px) {
+  .hero-title {
+    display: none;
+  }
+
+  .hero-container {
+    display: flex; /* Verwende flex für das Container-Layout */
+    flex-direction: column-reverse; /* Ändere die Ausrichtung auf Spalten */
+    align-items: center; /* Zentriere die Elemente horizontal */
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%; /* Nimm die volle Breite */
+  }
+  .hero-right {
+    transform: scale(0.7);
+    margin-bottom: -2rem;
+  }
+  .hero-right::before {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 976px) {
   .hero-img {
-    display: none;
+    /* display: none; */
   }
   .hero-right {
-    display: none;
+    /* display: none; */
   }
   .hero-underline {
     margin: 0 auto;
@@ -306,13 +330,13 @@ Hero
 .underline {
   width: 7rem;
   height: 4px;
-  background: var(--darkgreen-clr);
+  background: var(--red);
   /* margin: 0 auto; */
   margin-bottom: 0.25rem;
 }
 
 .hero-left h1 {
-  font-family: "Lobster", cursive;
+  font-family: var(--title-font);
   letter-spacing: 5px;
 }
 
@@ -338,9 +362,20 @@ Hero
 */
 
 .about {
+  background-image: linear-gradient(
+    to top,
+    var(--darkgreen-clr-transp) 0%,
+    var(--lightgreen-clr) 30%,
+    var(--lightgreen-clr) 70%,
+    var(--darkgreen-clr-transp) 100%
+  );
   height: auto;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-radius: 10rem;
+}
+body {
+  background: var(--lightgreen-clr);
 }
 .about-left {
   height: 20rem;
@@ -362,7 +397,7 @@ Hero
 }
 
 .about-text {
-  color: var(--p-grey);
+  color: var(--lightGrey);
   letter-spacing: 1px;
   line-height: 1.25rem;
   font-family: var(--secondFont);
@@ -403,7 +438,7 @@ Hero
   }
   .about-text {
     letter-spacing: 1px;
-    color: var(--p-grey);
+    /* color: var(--p-grey); */
   }
 }
 
@@ -411,10 +446,14 @@ Hero
   .about-text {
     width: 18rem;
   }
+  .about-right {
+    height: 10rem;
+    margin-right: 0rem;
+  }
 }
 
 .about-right h1 {
-  font-family: "Lobster", cursive;
+  font-family: var(--title-font);
   letter-spacing: 5px;
 }
 
@@ -425,7 +464,7 @@ Hero
 
 .about-left::before {
   content: "";
-  border: 5px solid var(--darkgreen-clr);
+  border: 5px solid var(--primary-clr);
   border-radius: 0.75rem;
   position: absolute;
   width: 100%;
@@ -443,7 +482,7 @@ Meine Hobbys
 
 .hobby {
   height: auto;
-  background-color: var(--lightGrey);
+  background-color: var(--lightgreen-clr);
 }
 
 .hobby-container {
@@ -456,8 +495,9 @@ Meine Hobbys
   padding-bottom: 0rem;
   text-align: center;
   font-size: 2rem;
-  font-family: var(--fontFamily);
+  font-family: var(--title-font);
   letter-spacing: 5px;
+  color: var(--lightGrey);
 }
 .hobby-underline {
   margin: 0 auto;
@@ -471,22 +511,23 @@ Meine Hobbys
 }
 .hobby-icon {
   background-color: var(--lightgreen-clr);
-  color: var(--darkgreen-clr);
+  color: var(--primary-clr);
   padding: 0.7rem 0.9rem;
   display: inline-block;
   font-size: 1rem;
   margin-bottom: 1.5rem;
   margin-right: 1.25rem;
   border: 0.5px solid var(--darkgreen-clr);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 4px rgba(222, 222, 222, 0.7);
   height: 2.5rem;
 }
 .hobby-text {
   letter-spacing: 1px;
-  color: var(--p-grey);
+  color: var(--lightGrey);
 }
-.hobby-small-title {
-  color: var(--darkGrey);
+.hobby-title-small {
+  color: var(--red);
+  letter-spacing: var(--letterSpacing);
 }
 
 @media screen and (min-width: 876px) {
@@ -533,6 +574,22 @@ Meine Hobbys
   }
 }
 
+/* 
+===============
+Trennung
+===============
+*/
+.trennung {
+  height: 15px;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    var(--primary-clr) 48%,
+    var(--primary-clr) 52%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
 /* 
 ===============
 Projekte
@@ -585,23 +642,6 @@ Projekte
   letter-spacing: 3px;
 }
 
-/* .card::after {
-  content: "";
-  opacity: 0;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  /* transform: scale(1.02); */
-/* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); */
-/* background: linear-gradient(rgba(121, 100, 75, 0.7), rgba(121, 100, 75, 0.7));
-  transition: all 0.2s linear; 
- } 
-.card:hover::after {
-  opacity: 1;
-} */
-
 .card .overlay {
   position: absolute;
   bottom: 0;
@@ -612,8 +652,8 @@ Projekte
   transform: translateY(100%);
   background: linear-gradient(
     to top,
-    rgba(121, 100, 75, 0.9) 90%,
-    rgba(121, 100, 75, 0.4)
+    rgba(75, 110, 121, 0.9) 90%,
+    rgba(38, 123, 134, 0.4)
   );
   transition: all 0.3s linear;
   color: #fff;
@@ -639,17 +679,21 @@ Projekte
 }
 .prev-btn i {
   padding: 0.5rem;
-  background: white;
+  background: black;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--primary-clr);
 }
 .next-btn i {
   padding: 0.5rem;
-  background: white;
+  background: black;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--primary-clr);
 }
 .all {
+  font-family: var(--secondFont);
+  letter-spacing: 0.07rem;
   background-color: var(--primary-clr);
   text-align: center;
   width: 12rem;
@@ -660,7 +704,7 @@ Projekte
   border-radius: 3px;
   margin: 0 auto;
   margin-bottom: 3rem;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.5);
   /* border: 2px solid var(--darkgreen-clr); */
   transition: all 0.3s linear;
 }
@@ -677,7 +721,10 @@ Projekte
   transition: all 0.3s linear;
 }
 .all:hover {
-  background-color: #e7c6a9;
+  background-color: var(--red);
+}
+.all a:hover {
+  color: white;
 }
 
 .card h3 {
@@ -693,8 +740,8 @@ Projekte
 .card img {
   width: 100%;
   height: 246px;
-  outline: 2px solid white;
-  outline-offset: -5px;
+  /* outline: 2px solid white;
+  outline-offset: -5px; */
 }
 .card-underline {
   margin: 0 auto;
@@ -731,8 +778,35 @@ Mein Werdegang
 ===============
 */
 
+.trennung2 {
+  height: 25px;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--lightgreen-clr) 0%,
+    /* var(--darkgreen-clr-transp) 40%, */ var(--darkgreen-clr-transp) 50%,
+    var(--darkgreen-clr-transp) 100%
+  );
+}
+.trennung3 {
+  height: 25px;
+  width: 100%;
+  background-image: linear-gradient(
+    to top,
+    var(--lightgreen-clr) 0%,
+    /* var(--darkgreen-clr-transp) 40%, */ var(--darkgreen-clr-transp) 50%,
+    var(--darkgreen-clr-transp) 100%
+  );
+}
+
 .werdegang {
-  background-color: var(--lightGrey);
+  background-image: linear-gradient(
+    to top,
+    var(--darkgreen-clr-transp) 0%,
+    var(--lightgreen-clr) 10%,
+    var(--lightgreen-clr) 90%,
+    var(--darkgreen-clr-transp) 100%
+  );
   padding-bottom: 5rem;
 }
 
@@ -773,7 +847,7 @@ Mein Werdegang
 .single-werdegang p {
   max-width: 40rem;
   letter-spacing: 1px;
-  color: var(--p-grey);
+  color: var(--darkgreen-clr);
   margin-left: 14rem;
   margin-right: 2rem;
   font-family: var(--secondFont);
@@ -785,11 +859,12 @@ Mein Werdegang
   text-align: center;
   margin-bottom: 1rem;
   letter-spacing: 2px;
-  color: var(--darkgreen-clr);
+  color: white;
   padding-top: 2rem;
 }
 
 .single-werdegang h3 {
+  color: var(--red);
   margin-bottom: 1rem;
   letter-spacing: 2px;
   margin-left: 14rem;
@@ -863,27 +938,29 @@ Meine Kenntnisse
 }
 .kenntnisse-items {
   font-weight: 700;
-  color: var(--darkgreen-clr);
+  color: var(--primary-clr);
   padding-top: 0.5rem;
   text-decoration: none;
 }
 .lebenslauf-btn {
+  font-family: var(--secondFont);
+  letter-spacing: 0.07rem;
   display: block;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 2rem;
   margin-top: 1rem;
   padding: 0.75rem 1rem;
-  background: var(--primary-clr);
-  width: 14rem;
-  color: rgb(51, 51, 51);
+  background: var(--red);
+  width: 14.5rem;
+  color: white;
   border-radius: 0.2rem;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.5);
   transition: all 0.3s linear;
 }
 
 .lebenslauf-btn:hover {
-  background-color: #e7c6a9;
+  background-color: var(--darkgreen-clr);
 }
 
 @media screen and (max-width: 476px) {
@@ -917,7 +994,7 @@ Kontaktier mich
   margin: 0 auto;
 }
 .kontakt-heading h1 {
-  font-family: var(--fontFamily);
+  font-family: var(--secondFont);
   padding-bottom: 0.5rem;
   letter-spacing: 2px;
   color: var(--darkGrey);
@@ -930,7 +1007,8 @@ Kontaktier mich
 
 .e-mail-container h1 {
   font-family: var(--fontFamily);
-  letter-spacing: var(--letterSpacing);
+  letter-spacing: 0.3rem;
+  color: var(--primary-clr);
 }
 
 @media screen and (max-width: 676px) {
@@ -1017,13 +1095,24 @@ Meine Projekte (page)
   /* transform: translateX(9rem); */
   transform: translateY(-2.7rem);
   padding: 0.5rem 0.7rem;
-  color: var(--darkgreen-clr);
+  color: black;
+}
+.projekte-card h2 {
+  color: black;
+}
+
+.projekte-card a {
+  color: black;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+}
+.projekte-card a:hover {
+  background-color: var(--red);
 }
 .projekte-card img {
   width: 100%;
   height: 245px;
-  outline: 2px solid white;
-  outline-offset: -5px;
+  /* outline: 2px solid white;
+  outline-offset: -5px; */
 }
 .card-underline {
   margin: 0 auto;
@@ -1094,4 +1183,8 @@ Meine Projekte (page)
   max-width: 15rem;
   margin: 0 auto;
   margin-bottom: 3rem;
+}
+.github-btn:hover {
+  background-color: var(--red);
+  color: black;
 }

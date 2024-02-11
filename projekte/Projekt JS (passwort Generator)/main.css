@@ -247,3 +247,21 @@ height: 100%;
   cursor: pointer;
   background: whitesmoke;
 }
+
+@media screen and (max-width:400px){
+  .password{
+    font-size: 1rem;
+  }
+  .generator-title{
+    font-size: 2rem
+  }
+  .generator-form input{
+    transform: scale(0.9);
+  }
+  .list-item{
+    font-size: 1rem;
+  }
+  .list-password{
+    font-size: 1rem;
+  }
+}

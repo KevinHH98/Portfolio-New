@@ -43,3 +43,9 @@
   line-height: 2rem;
   font-size: 1.25rem;
 }
+
+@media  screen and (max-width:400px) {
+  .jokes-content{
+    transform: scale(0.8);
+  }
+}

@@ -57,10 +57,9 @@ body {
 .count {
   font-size: 3rem;
 }
-.winner-container{
-    display: flex;
-    justify-content: center;
-    
+.winner-container {
+  display: flex;
+  justify-content: center;
 }
 .winner-text {
   color: white;
@@ -79,26 +78,44 @@ body {
   color: white;
   cursor: pointer;
 }
-.buttons i:hover{
-    transform: scale(1.07);
+.buttons i:hover {
+  transform: scale(1.07);
 }
-.buttons i{
-    padding: 2rem;
-    border: 3px solid white;
-    border-radius: 50%;
+.buttons i {
+  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 50%;
 }
 
-.title-under{
-    padding: 3rem;
-    color: white;
-    font-size: 1rem;
-    text-transform: capitalize;
+.title-under {
+  padding: 3rem;
+  color: white;
+  font-size: 1rem;
+  text-transform: capitalize;
 }
-.reset-btn{
-    padding: 0.3rem 1.5rem;
-    background-color: rgba(255, 73, 73);
-    color: white;
-    border: 1px solid white;
-    text-transform: uppercase;
-    cursor: pointer;
+.reset-btn {
+  padding: 0.3rem 1.5rem;
+  background-color: rgba(255, 73, 73);
+  color: white;
+  border: 1px solid white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 1rem;
+  }
+  .navbar {
+    height: 3rem;
+  }
+  .winner-text {
+    font-size: 1rem;
+  }
+  .winner-span {
+    font-size: 1rem;
+  }
+  .buttons {
+    font-size: 2rem;
+  }
 }
